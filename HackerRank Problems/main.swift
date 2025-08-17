@@ -145,3 +145,17 @@ func stairCase(n: Int) {
 }
 
 stairCase(n: 5)
+
+func miniMaxSum(arr: [Int]) -> Void {
+    let total = arr.reduce(0, +)
+    
+    let result = arr.enumerated().map { index, value in
+        total - value
+    }
+    
+    if let minVal = result.min(), let maxVal = result.max() {
+        print(minVal, maxVal)
+    }
+}
+
+miniMaxSum(arr: [1,2,3,4,5])
